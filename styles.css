@@ -11,7 +11,7 @@
 body {
   background: var(--cor-fundo);
   font-family: 'Segoe UI', sans-serif;
-  /* text-align: center; */
+  text-align: center;
   color: var(--cor-principal);
   margin: 0;
   padding: 0;
@@ -20,7 +20,6 @@ body {
   align-items: center;
   justify-content: center;
   overflow-x: hidden;
-  text-align: justify;
 }
 
 .container {
