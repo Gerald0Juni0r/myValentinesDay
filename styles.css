@@ -1,0 +1,151 @@
+:root {
+  --cor-fundo: rgb(3 13 33);
+  --cor-principal: white;
+  --cor-destaque: #722646;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--cor-fundo);
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  color: var(--cor-principal);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 700px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.carrossel {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto 20px;
+}
+
+.carrossel img {
+  width: 100%;
+  height: auto;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.carrossel img:hover {
+  transform: scale(1.03);
+}
+
+.mensagem {
+  font-style: italic;
+  margin-top: 30px;
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+.musica {
+  margin-top: 30px;
+}
+
+#playButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+#playButton img {
+  height: 40px;
+  width: 40px;
+}
+
+#playButton:hover {
+  transform: scale(1.1);
+}
+
+/* Floating hearts */
+.heart {
+  position: fixed;
+  bottom: 0;
+  width: 25px;
+  height: 25px;
+  background: red;
+  transform: rotate(-45deg);
+  animation: floatUp 3s ease-out forwards;
+  opacity: 0.8;
+  z-index: 9999;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background: red;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -12.5px;
+  left: 0;
+}
+
+.heart::after {
+  left: 12.5px;
+  top: 0;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) rotate(-45deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-300px) rotate(-45deg);
+    opacity: 0;
+  }
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  } 
+  
+  h2 {
+    font-size: 1em;
+  }
+
+  .mensagem {
+    font-size: 0.75em;
+  }
+
+  #playButton img {
+    height: 32px;
+    width: 32px;
+  }
+
+  .carrossel img {
+    height: 300px;
+    width: 300px;
+  }
+}
